@@ -7,19 +7,16 @@ function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
         return "00:00";
     }
-
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
-
     const formattedMinutes = String(minutes).padStart(2, '0');
     const formattedSeconds = String(remainingSeconds).padStart(2, '0');
-
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
 async function getSongs(folder) {
     currFolder = folder;
-    let a = await fetch(`/${folder}/`)
+    let a = await fetch('http://127.0.0.1:3000/Songs/')
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
@@ -28,7 +25,7 @@ async function getSongs(folder) {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${folder}/`)[1])
+            songs.push(element.href.split(`http://127.0.0.1:3000/Songs/`)[1])
         }
     }
  
@@ -61,7 +58,7 @@ async function getSongs(folder) {
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `/${currFolder}/` + track
+    currentSong.src = `http://127.0.0.1:3000/Songs/` + track
     if (!pause) {
         currentSong.play()
         play.src = "Images/pause.svg"
@@ -74,7 +71,7 @@ const playMusic = (track, pause = false) => {
 
 async function displayAlbums() {
     console.log("displaying albums")
-    let a = await fetch(`/songs/`)
+    let a = await fetch('/songs')
     let response = await a.text();
     let div = document.createElement("div")
     div.innerHTML = response;
