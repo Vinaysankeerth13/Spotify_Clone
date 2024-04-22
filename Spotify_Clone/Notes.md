@@ -32,3 +32,5 @@ http://127.0.0.1:3000/Spotify_Clone/Songs/Adavi%20Gusagusalu.mp3.mp3 not found, 
 
 so to solve it i included a if case where if the name of the song ends with .mp3 we don't append .mp3 else we shall append it. 
 
+- I encountered a git rebase error
+
