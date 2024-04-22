@@ -34,3 +34,4 @@ so to solve it i included a if case where if the name of the song ends with .mp3
 
 - I encountered a git rebase error
 
+I think that was because I moved all the folders one step in locally so probably should have rebased before commiting.
