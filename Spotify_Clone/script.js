@@ -1,7 +1,7 @@
 let currentSong = new Audio();
 
 async function getSongs() {
-  let a = await fetch("http://127.0.0.1:3000/Spotify_Clone/Songs/");
+  let a = await fetch(`http://127.0.0.1:3000/Spotify_Clone/Songs/`);
   let response = await a.text();
   let div = document.createElement("div");
   div.innerHTML = response;
@@ -21,7 +21,7 @@ const playMusic = (track, pause = false) => {
   if (!track.endsWith(".mp3")) {
     track += ".mp3"; // Append file extension if necessary
   }
-  currentSong.src = "/Spotify_Clone/Songs/" + track;
+  currentSong.src = `/Spotify_Clone/Songs/` + track;
   if (!pause) {
     currentSong.play();
     play.src = "Images/pause1.svg";
@@ -136,6 +136,13 @@ async function main() {
       playMusic(songs[index + 1]);
     }
   });
+
+  // Add an event for volume
+  document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e)=>{
+    console.log(e);
+    currentSong.volume = parseInt(e.target.value)/100; 
+  } 
+  )
 }
 main(); 
 
