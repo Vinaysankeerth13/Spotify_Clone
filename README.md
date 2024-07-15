@@ -1,6 +1,6 @@
 This is a music Player app that I built using HTML,CSS and Javascript
 
-Spotify clone | HTML, CSS, JavaScript
+Harmonia | HTML, CSS, JavaScript
 
 • Fetching data: Fetching and displaying a list of songs and albums from a local server using the Fetch API.
 
