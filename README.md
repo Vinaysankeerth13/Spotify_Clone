@@ -15,7 +15,4 @@ Spotify clone | HTML, CSS, JavaScript
 • Volume control and metadata: Incorporating additional features like volume control and album metadata
 display.
 
-
-https://github.com/user-attachments/assets/c528d52d-6c58-4cce-a1d6-3ced3c2e405c
-
-
+https://github.com/user-attachments/assets/3ef533d0-95de-4fac-8946-a5022c6f5ea5
